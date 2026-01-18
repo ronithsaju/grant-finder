@@ -37,6 +37,10 @@ export default function FindGrantPage() {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center bg-white px-6">
         <div className="h-16 w-16 animate-spin rounded-full border-4 border-gray-200 border-t-black"></div>
+        <div className="mt-6 text-xl font-medium text-gray-900 italic">
+          The best way to find yourself is to lose yourself in the service of
+          others. - Mahatma Gandhi
+        </div>
         <p className="mt-6 text-xl font-medium text-gray-900 animate-pulse">
           Analysing your needs and recommending grants...
         </p>

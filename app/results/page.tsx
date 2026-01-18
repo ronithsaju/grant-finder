@@ -27,6 +27,11 @@ export default function ResultsPage() {
           <h1 className="text-3xl font-bold text-gray-900">
             Recommended Grants
           </h1>
+          <h3 className="text-lg text-gray-600">
+            Click on the grants to learn more!
+          </h3>
+        </div>
+        <div className="mb-6">
           <Button variant="outline" onClick={() => router.push("/find")}>
             Search Again
           </Button>
@@ -46,6 +51,14 @@ export default function ResultsPage() {
                   <p className="text-gray-700">
                     <span className="font-medium">Reasoning:</span>{" "}
                     {grant.reasoning}
+                  </p>
+                  <p className="text-gray-700">
+                    <span className="font-medium">Funding Amount:</span>{" "}
+                    {grant.funding}
+                  </p>
+                  <p className="text-gray-700">
+                    <span className="font-medium">Application Deadline:</span>{" "}
+                    {grant.due_date}
                   </p>
                   {/* Display other fields if available in the response */}
                 </div>
