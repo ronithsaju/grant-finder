@@ -28,7 +28,7 @@ HEADER_MAP = {
 }
 
 def get_latest_excel():
-    search_paths = ["backend/scraper/output/*.xlsx"]
+    search_paths = ["backend/scraper/output/Gemini_Grant_Report_20260116_010612.xlsx",]
     found_files = []
     for path in search_paths:
         found_files.extend(glob.glob(path))
