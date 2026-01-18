@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function FindGrantPage() {
   const [prompt, setPrompt] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const handleFind = async () => {
     if (!prompt) return;
@@ -18,13 +20,29 @@ export default function FindGrantPage() {
         body: JSON.stringify({ prompt }),
       });
       const data = await response.json();
-      console.log("Gemini Recommendations:", data);
+
+      // Store results in localStorage to access them on the results page
+      if (typeof window !== "undefined") {
+        localStorage.setItem("grantResults", JSON.stringify(data));
+      }
+
+      router.push("/results");
     } catch (error) {
       console.error("Error fetching grants:", error);
-    } finally {
-      setIsLoading(false);
+      setIsLoading(false); // Only stop loading on error, otherwise we are navigating away
     }
   };
+
+  if (isLoading) {
+    return (
+      <main className="flex min-h-screen flex-col items-center justify-center bg-white px-6">
+        <div className="h-16 w-16 animate-spin rounded-full border-4 border-gray-200 border-t-black"></div>
+        <p className="mt-6 text-xl font-medium text-gray-900 animate-pulse">
+          Analysing your needs and recommending grants...
+        </p>
+      </main>
+    );
+  }
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-white px-6">
