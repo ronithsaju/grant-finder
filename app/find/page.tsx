@@ -1,15 +1,40 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 export default function FindGrantPage() {
+  const [prompt, setPrompt] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleFind = async () => {
+    if (!prompt) return;
+
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/find-grants", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt }),
+      });
+      const data = await response.json();
+      console.log("Gemini Recommendations:", data);
+    } catch (error) {
+      console.error("Error fetching grants:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-white px-6">
       <div className="w-full max-w-xl">
         <h1 className="text-3xl font-semibold text-gray-900">
-          What sector of grants are you looking for?
+          Describe your organisation and the grants you are looking for
         </h1>
 
         <div className="mt-6">
-          <select
+          <textarea
             className="
                 w-full
                 rounded-md
@@ -21,34 +46,21 @@ export default function FindGrantPage() {
                 focus:border-gray-900
                 focus:ring-gray-900
                 focus:outline-none
+                min-h-[150px]
             "
-            defaultValue=""
-          >
-            <option value="" disabled>
-              Select the sector your organisation is involved in
-            </option>
-            <option value="Arts, Heritage & Culture">
-              Arts, Heritage & Culture
-            </option>
-            <option value="Youth & Education">Youth & Education</option>
-            <option value="Community Care & Social Services">
-              Community Care & Social Services
-            </option>
-            <option value="Environment & Public Spaces">
-              Environment & Public Spaces
-            </option>
-            <option value="Sports & Physical Activity">
-              Sports & Physical Activity
-            </option>
-            <option value="Community Integration & Social Cohesion">
-              Community Integration & Social Cohesion
-            </option>
-          </select>
+            placeholder="e.g. We are a non-profit organization focusing on eldercare in Singapore..."
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+          />
         </div>
 
         <div className="mt-6">
-          <Button className="rounded-full bg-black text-white px-8 py-3">
-            Find
+          <Button
+            className="rounded-full bg-black text-white px-8 py-3"
+            onClick={handleFind}
+            disabled={isLoading}
+          >
+            {isLoading ? "Finding..." : "Find"}
           </Button>
         </div>
       </div>
