@@ -20,6 +20,12 @@ export default function ResultsPage() {
     }
   }, []);
 
+  // Handle Navigation
+  const handleGrantClick = (index: number) => {
+    // '_blank' tells the browser to open a new tab
+    window.open(`/results/${index}`, "_blank");
+  };
+
   return (
     <main className="min-h-screen bg-white px-6 py-12">
       <div className="mx-auto max-w-4xl">
@@ -40,12 +46,10 @@ export default function ResultsPage() {
         <div className="grid gap-6">
           {grants.length > 0 ? (
             grants.map((grant: any, index: number) => (
-              <a
+              <div 
                 key={index}
-                href={grant.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
+                onClick={() => handleGrantClick(index)}
+                className="cursor-pointer transition-transform hover:scale-[1.01]"
               >
                 <div className="rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
                   <h2 className="text-xl font-semibold text-gray-900">
@@ -73,7 +77,7 @@ export default function ResultsPage() {
                     )}
                   </div>
                 </div>
-              </a>
+              </div>
             ))
           ) : (
             <p className="text-gray-500">
