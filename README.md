@@ -7,7 +7,7 @@ Helping nonprofits *find*, *filter*, and *prioritize* grants faster so they can 
 
 ## 🚀 Problem Statement
  
-> How might non-profit organisations “pull” information about grants from the OurSG grants portal that are relevant to them according to key criteria including issue area, scope of grant, KPIs, funding quantum, application due date, etc., so that they can strengthen their financial sustainability?
+> How might non-profit organisations “pull” information about grants from OurSG grants portal that are relevant to them according to key criteria including issue area, scope of grant, KPIs, funding quantum, application due date, etcs. so that they can strengthen their financial sustainability?
 
 **Grant Finder** addresses this by providing:
 
