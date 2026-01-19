@@ -50,7 +50,7 @@ export async function POST(req: Request) {
 
     // 3. Generate Recommendations
     const response = await genAI.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-2.0-flash",
       contents: systemPrompt,
     });
     const text = response.text;
