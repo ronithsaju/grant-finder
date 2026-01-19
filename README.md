@@ -3,7 +3,7 @@
 **AI-powered Grant Search & Discovery**  
 Helping nonprofits *find*, *filter*, and *prioritize* grants faster so they can secure funding without sifting through endless portals.
 
----
+
 
 ## 🚀 Problem Statement
  
@@ -17,8 +17,6 @@ Helping nonprofits *find*, *filter*, and *prioritize* grants faster so they can 
 
 Powered by AI, it dramatically reduces the time spent on grant research — helping non-profit organisations focus on funding impact, not paperwork.
 
----
-
 ## 🔍 What This Does
 
 Grant Finder helps you:
@@ -30,7 +28,6 @@ Grant Finder helps you:
 
 AI-driven grant discovery tools like this can scan large datasets and return tailored opportunities in seconds rather than hours or days, making it a game-changer for nonprofits.
 
----
 
 ## 📦 Features
 
@@ -53,8 +50,6 @@ AI-driven grant discovery tools like this can scan large datasets and return tai
 
 📊 **Database is Updated Regularly** Our system performs scheduled scrapes of the OurSG portal to ensure the data you view is updated.
 
----
-
 ## ⚙️ How It Works
 
 Grant Finder makes discovering the right grants simple and intelligent:
@@ -68,7 +63,7 @@ Grant Finder makes discovering the right grants simple and intelligent:
 3. **Personalized Recommendations**  
    The system presents grants that are best suited to your organization and event, ranked by relevance and fit. Reasoning explaning *why* each grant it is a good match is provided too.
 
----
+
 
 ## 🧠 Technology
 
@@ -78,7 +73,7 @@ This project is built with:
 - **TypeScript & Python backend** — Robust and scalable logic  
 - **Gemini AI** — For smart grant relevance scoring  
 
----
+
 
 ## 🛠️ Getting Started
 
