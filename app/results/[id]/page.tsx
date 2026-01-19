@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink, Calendar, DollarSign, Target, FileText } from "lucide-react";
+import {ExternalLink, Calendar, DollarSign, Target, FileText } from "lucide-react";
 
 export default function GrantDetailPage() {
   const [grant, setGrant] = useState<any | null>(null);
