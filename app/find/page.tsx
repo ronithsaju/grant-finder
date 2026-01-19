@@ -105,7 +105,7 @@ export default function FindGrantPage() {
               <Search className="w-5 h-5 text-gray-900" />
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
-              Let's find your funding.
+              Let's find your grants.
             </h1>
             <p className="text-gray-500 text-lg">
               Tell us about your organization and your goals. Our AI will match you with the best grants in Singapore.
@@ -134,7 +134,7 @@ export default function FindGrantPage() {
                     duration-200
                     resize-none
                 "
-                placeholder="e.g. We are a non-profit organization based in Singapore focusing on eldercare. We are looking for funding to digitize our volunteer management system..."
+                placeholder="e.g. We are a non-profit organization based in Singapore focusing on eldercare. We are looking for grants to digitize our volunteer management system..."
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
               />
