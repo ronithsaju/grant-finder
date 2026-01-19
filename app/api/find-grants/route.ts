@@ -42,7 +42,7 @@ export async function POST(req: Request) {
       1. Analyze the user's description and needs.
       2. Select the most relevant grants from the database provided above.
       3. Return a JSON array of the selected grants with an extra "reasoning" field explaining why it fits. The other fields should remain unchanged.
-      4. Limit the output to a maximum of 5 grants.
+      4. Limit the output to a maximum of 8 grants.
 
       OUTPUT FORMAT (JSON ONLY):
       [ { "grant_name": "...", "reasoning": "..." }, ... ]

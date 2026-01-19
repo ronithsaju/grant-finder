@@ -40,29 +40,40 @@ export default function ResultsPage() {
         <div className="grid gap-6">
           {grants.length > 0 ? (
             grants.map((grant: any, index: number) => (
-              <div
+              <a
                 key={index}
-                className="rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow"
+                href={grant.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
               >
-                <h2 className="text-xl font-semibold text-gray-900">
-                  {grant.grant_name}
-                </h2>
-                <div className="mt-2 space-y-2">
-                  <p className="text-gray-700">
-                    <span className="font-medium">Reasoning:</span>{" "}
-                    {grant.reasoning}
-                  </p>
-                  <p className="text-gray-700">
-                    <span className="font-medium">Funding Amount:</span>{" "}
-                    {grant.funding}
-                  </p>
-                  <p className="text-gray-700">
-                    <span className="font-medium">Application Deadline:</span>{" "}
-                    {grant.due_date}
-                  </p>
-                  {/* Display other fields if available in the response */}
+                <div className="rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                  <h2 className="text-xl font-semibold text-gray-900">
+                    {grant.grant_name}
+                  </h2>
+
+                  <div className="mt-2 space-y-2">
+                    <p className="text-gray-700">
+                      <span className="font-medium">Reasoning:</span>{" "}
+                      {grant.reasoning}
+                    </p>
+
+                    {grant.funding && (
+                      <p className="text-gray-700">
+                        <span className="font-medium">Funding Amount:</span>{" "}
+                        {grant.funding}
+                      </p>
+                    )}
+
+                    {grant.due_date && (
+                      <p className="text-gray-700">
+                        <span className="font-medium">Application Deadline:</span>{" "}
+                        {grant.due_date}
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
+              </a>
             ))
           ) : (
             <p className="text-gray-500">
