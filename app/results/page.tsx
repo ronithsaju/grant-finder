@@ -54,20 +54,20 @@ export default function ResultsPage() {
 
                   <div className="mt-2 space-y-2">
                     <p className="text-gray-700">
-                      <span className="font-medium">Reasoning:</span>{" "}
+                      <span className="font-bold">Reasoning:</span>{" "}
                       {grant.reasoning}
                     </p>
 
                     {grant.funding && (
                       <p className="text-gray-700">
-                        <span className="font-medium">Funding Amount:</span>{" "}
+                        <span className="font-bold">Funding Amount:</span>{" "}
                         {grant.funding}
                       </p>
                     )}
 
                     {grant.due_date && (
                       <p className="text-gray-700">
-                        <span className="font-medium">Application Deadline:</span>{" "}
+                        <span className="font-bold">Application Deadline:</span>{" "}
                         {grant.due_date}
                       </p>
                     )}
