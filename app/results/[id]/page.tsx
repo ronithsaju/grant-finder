@@ -41,15 +41,6 @@ export default function GrantDetailPage() {
   return (
     <main className="min-h-screen bg-gray-50 px-6 py-12">
       <div className="mx-auto max-w-3xl">
-        
-        {/* Back Button */}
-        <Button 
-            variant="ghost" 
-            className="mb-6 pl-0 hover:bg-transparent hover:text-gray-600"
-            onClick={() => router.back()}
-        >
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Results
-        </Button>
 
         {/* Main Card Container using standard div */}
         <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
