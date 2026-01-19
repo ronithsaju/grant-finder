@@ -1,4 +1,4 @@
-# 🧠 Grant Finder
+# 📖 Grant Finder
 
 **AI-powered Grant Search & Discovery**  
 Helping nonprofits *find*, *filter*, and *prioritize* grants faster so they can secure funding without sifting through endless portals.
